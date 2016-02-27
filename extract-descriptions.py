@@ -18,9 +18,18 @@ colnames = [
     'current_price'
 ]
 
-data = pandas.read_csv('listings.csv', names=colnames, header=0)
+class Descriptions:
+    def __init__(self, descriptions, prices):
+        self.descriptions = descriptions
+        self.prices = prices
 
-descriptions = data.description.tolist()
-current_prices = data.current_price.tolist()
 
-print current_prices
+def extract_descriptions(filename):
+    data = pandas.read_csv(filename, names=colnames, header=0)
+
+    descriptions = data.description.tolist()
+    prices = data.current_price.tolist()
+
+    return Descriptions(descriptions, prices)
+
+print extract_descriptions('listings.csv')
