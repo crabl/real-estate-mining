@@ -7,3 +7,4 @@ include/
 lib/
 .Python
 python
+pip-selfcheck.json
