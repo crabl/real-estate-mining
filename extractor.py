@@ -19,8 +19,8 @@ colnames = [
 ]
 
 class Descriptions:
-    def __init__(self, descriptions, prices):
-        self.descriptions = descriptions
+    def __init__(self, corpus, prices):
+        self.corpus = corpus
         self.prices = prices
 
 
@@ -31,5 +31,3 @@ def extract_descriptions(filename):
     prices = data.current_price.tolist()
 
     return Descriptions(descriptions, prices)
-
-print extract_descriptions('listings.csv')
