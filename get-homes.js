@@ -42,13 +42,15 @@ function processListing(listing) {
     num_price_adjustments,
     percent_change_price,
     start_price: parseFloat(start_price),
-    current_price: parseFloat(current_price)
+    current_price: parseFloat(current_price),
+    description: listing.public_remarks
   });
 }
 
 function convertToCSV(data) {
   const fields = [
     'mls_number',
+    'description',
     'num_bathrooms',
     'num_bedrooms',
     'building_type',
